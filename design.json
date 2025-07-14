@@ -1,0 +1,176 @@
+{
+  "designSystemProfile": {
+    "name": "Scale AI Dark Theme",
+    "version": "1.0.0",
+    "description": "A comprehensive design system based on the visual language of the Scale AI website, featuring a dark theme with vibrant, iridescent gradients.",
+    "elementStyling": {
+      "backgrounds": {
+        "context": "Main page and section backgrounds.",
+        "default": {
+          "color": "#000000",
+          "notes": "The entire UI uses a pure black background for maximum contrast."
+        }
+      },
+      "text": {
+        "headings": {
+          "h1": {
+            "context": "Main hero section titles like 'The future of your industry starts here'.",
+            "color": "#FFFFFF",
+            "fontWeight": 700,
+            "notes": "Primary headings are pure white for emphasis."
+          },
+          "h1_gradient": {
+            "context": "Specific, emphasized words within H1 headings, like 'starts here' or 'Breakthrough AI'.",
+            "background": "linear-gradient(95deg, #A969FF 10%, #E5559F 50%, #63A7FF 90%)",
+            "textFill": "transparent",
+            "backgroundClip": "text",
+            "notes": "This gradient is exclusively for highlighting key terms in main titles and should never be used as a container background."
+          },
+          "h2": {
+            "context": "Secondary headings like 'Full-Stack AI Solutions'.",
+            "color": "#FFFFFF",
+            "fontWeight": 600
+          },
+          "footerHeadings": {
+            "context": "Titles in the footer section, e.g., 'PRODUCTS', 'COMPANY'.",
+            "color": "#A1A1A1",
+            "fontWeight": 700,
+            "textTransform": "uppercase"
+          }
+        },
+        "body": {
+          "default": {
+            "context": "Subtitles or descriptive text below main headings.",
+            "color": "#C2C2C2",
+            "fontWeight": 400
+          },
+          "footerLinks": {
+            "context": "Navigation links within the main site footer.",
+            "default": {
+              "color": "#8F8F8F"
+            },
+            "hover": {
+              "color": "#FFFFFF"
+            }
+          }
+        },
+        "links": {
+          "navigation": {
+            "context": "Main header navigation links.",
+            "default": {
+              "color": "#FFFFFF"
+            },
+            "hover": {
+              "color": "#C2C2C2",
+              "notes": "A subtle dimming effect on hover."
+            }
+          },
+          "inline": {
+            "context": "Action-oriented text links, like 'Build AI →'.",
+            "default": {
+              "color": "#FFFFFF",
+              "iconColor": "#FFFFFF"
+            },
+            "hover": {
+              "color": "#C2C2C2",
+              "notes": "Text and icon should dim slightly on hover."
+            }
+          }
+        }
+      },
+      "buttons": {
+        "primary": {
+          "context": "The main call-to-action button, e.g., 'Book a Demo' in the header.",
+          "default": {
+            "background": "#FFFFFF",
+            "text": "#000000",
+            "borderRadius": "8px",
+            "border": "none"
+          },
+          "hover": {
+            "background": "#F0F0F0",
+            "notes": "Slightly darkens the background on hover."
+          },
+          "active": {
+            "background": "#E0E0E0"
+          }
+        },
+        "secondary": {
+          "context": "A secondary call-to-action, often purple-themed, e.g., 'Book a Demo' under 'Full-Stack AI Solutions'.",
+          "default": {
+            "background": "#40324F",
+            "text": "#E9E9E9",
+            "borderRadius": "8px",
+            "border": "none"
+          },
+          "hover": {
+            "background": "#524166"
+          }
+        }
+      },
+      "icons": {
+        "socialMedia": {
+          "context": "Social media icons located in the footer (X, Facebook, LinkedIn).",
+          "default": {
+            "fill": "#8F8F8F",
+            "container": "none"
+          },
+          "hover": {
+            "fill": "#FFFFFF"
+          }
+        },
+        "actionIcon": {
+          "context": "Icons paired with text links, like the arrow in 'Build AI →'.",
+          "default": {
+            "fill": "#FFFFFF"
+          },
+          "hover": {
+            "fill": "#C2C2C2"
+          }
+        }
+      },
+      "containers": {
+        "pill": {
+          "context": "Small, capsule-shaped tags used for labeling sections, e.g., 'AI FOR THE ENTERPRISE'.",
+          "background": "#201A25",
+          "text": "#FFFFFF",
+          "borderRadius": "9999px",
+          "border": "1px solid #40324F"
+        }
+      },
+      "visualEffects": {
+        "decorativeShapes": {
+          "context": "The floating, iridescent, disc-like shapes in the background of hero sections.",
+          "background": "conic-gradient(from 180deg at 50% 50%, #A25BFF 0%, #4EBCFF 25%, #8BFFB2 50%, #FFD770 75%, #A25BFF 100%)",
+          "opacity": 0.8,
+          "notes": "This is a complex, multi-color gradient used purely for non-interactive, decorative background elements."
+        }
+      }
+    },
+    "misapplicationRules": {
+      "title": "Critical 'DO NOT' Rules for AI Replication",
+      "rules": [
+        {
+          "rule": "DO NOT apply the H1 text gradient (`linear-gradient(95deg, #A969FF...)`) to any element other than text. It should never be a background for buttons, cards, or containers.",
+          "appliesTo": ["buttons", "containers", "backgrounds"]
+        },
+        {
+          "rule": "DO NOT use the decorative shape conic-gradient on interactive elements like buttons or icons.",
+          "appliesTo": ["buttons", "icons", "text"]
+        },
+        {
+          "rule": "DO NOT use footer text colors (`#A1A1A1`, `#8F8F8F`) in the main body or header sections of the page.",
+          "appliesTo": ["text.headings", "text.body"]
+        },
+        {
+          "rule": "DO NOT apply shadows to text content. Shadows are not a feature of this design system.",
+          "appliesTo": ["text"]
+        },
+        {
+          "rule": "DO NOT use different border-radius values for buttons. Maintain a consistent `8px` radius for all standard buttons.",
+          "appliesTo": ["buttons"]
+        }
+      ]
+    }
+  }
+}

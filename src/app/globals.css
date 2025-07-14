@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* Scale AI Design System CSS Variables based on design.json */
+:root {
+  /* Background colors */
+  --background: #000000;
+  --foreground: #ffffff;
+
+  /* Text colors */
+  --text-primary: #ffffff;
+  --text-secondary: #c2c2c2;
+  --text-footer-heading: #a1a1a1;
+  --text-footer-link: #8f8f8f;
+
+  /* Button colors */
+  --button-primary-bg: #ffffff;
+  --button-primary-text: #000000;
+  --button-primary-hover: #f0f0f0;
+  --button-secondary-bg: #40324f;
+  --button-secondary-text: #e9e9e9;
+  --button-secondary-hover: #524166;
+
+  /* Container colors */
+  --pill-bg: #201a25;
+  --pill-border: #40324f;
+
+  /* Gradients */
+  --gradient-text: linear-gradient(
+    95deg,
+    #a969ff 10%,
+    #e5559f 50%,
+    #63a7ff 90%
+  );
+  --gradient-decorative: conic-gradient(
+    from 180deg at 50% 50%,
+    #a25bff 0%,
+    #4ebcff 25%,
+    #8bffb2 50%,
+    #ffd770 75%,
+    #a25bff 100%
+  );
+
+  /* Font variables - Modern Geometric Sans-Serif */
+  --font-open-sans: "Open Sans", "Helvetica Neue", "Arial", system-ui,
+    sans-serif;
+  --font-jetbrains-mono: "JetBrains Mono", "Consolas", "Monaco", monospace;
+}
+
+/* Force dark theme - following design.json requirement for black background */
+html {
+  background: #000000;
+  color: #ffffff;
+}
+
+body {
+  background: #000000;
+  color: #ffffff;
+  font-family: var(--font-open-sans), system-ui, sans-serif;
+}
+
+/* Custom scrollbar to match dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #606060;
+}
+
+/* Shine effect for text */
+.animate-shine {
+  position: relative;
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    var(--background) 0%,
+    var(--foreground) 50%,
+    var(--background) 100%
+  );
+  animation: shine 4s linear infinite;
+  display: inline-block;
+}
+
+/* Ensure focus states are visible */
+*:focus-visible {
+  outline: 2px solid #a969ff;
+  outline-offset: 2px;
+}
+
+/* Technologies Carousel Animation */
+@keyframes tech-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-33.333%));
+  }
+}
+
+.tech-scroll {
+  animation: tech-scroll 30s linear infinite;
+  width: max-content;
+  display: flex;
+  will-change: transform;
+}
