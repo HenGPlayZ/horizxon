@@ -257,11 +257,11 @@ export default function Home() {
                   className="w-full px-3 py-2 bg-black border border-[#3A354A] rounded-lg text-white focus:border-purple-500 focus:outline-none"
                 >
                   <option value="">Select budget range</option>
-                  <option value="$500 - $1,000">$500 - $1,000</option>
-                  <option value="$1,000 - $3,000">$1,000 - $3,000</option>
-                  <option value="$3,000 - $5,000">$3,000 - $5,000</option>
-                  <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-                  <option value="$10,000+">$10,000+</option>
+                  <option value="$50 - $100">$50 - $100</option>
+                  <option value="$100 - $250">$100 - $250</option>
+                  <option value="$250 - $500">$250 - $500</option>
+                  <option value="$500 - $750">$500 - $750</option>
+                  <option value="$750+">$750+</option>
                 </select>
               </div>
 
