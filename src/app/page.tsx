@@ -37,7 +37,7 @@ export default function Home() {
       );
 
       window.open(
-        `mailto:hengthegoat@gmail.com?subject=${subject}&body=${body}`,
+        `mailto:horizxon.limited@gmail.com?subject=${subject}&body=${body}`,
         "_blank"
       );
       return true; // Assume email client opened successfully
