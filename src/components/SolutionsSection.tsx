@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { Button } from "@/components/ui/Button";
-import Pill from "@/components/ui/Pill";
 import SplitText from "@/components/ui/SplitText";
 import GlareHover from "@/components/ui/GlareHover";
+import StarBorder from "@/components/ui/StarBorder";
+import LaserFlow from "@/components/LaserFlow";
 
 interface SolutionsProps {
   onBookDemo: () => void;
@@ -53,7 +53,9 @@ const SolutionsSection: React.FC<SolutionsProps> = ({ onBookDemo }) => {
         {/* Section header */}
         <div className="text-center mb-16">
           <div className="mb-6">
-            <Pill>WEB DEVELOPMENT SERVICES</Pill>
+            <StarBorder as="div" color="#A969FF" className="inline-block">
+              WEB DEVELOPMENT SERVICES
+            </StarBorder>
           </div>
 
           {/* H2 heading with animated text */}
@@ -154,41 +156,59 @@ const SolutionsSection: React.FC<SolutionsProps> = ({ onBookDemo }) => {
           })}
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center">
-          <div className="bg-[#0A0A0A] border border-gray-800 rounded-lg p-8 max-w-2xl mx-auto">
-            <h3 className="text-white font-semibold text-2xl mb-4">
-              Ready to Build Your Dream Website?
-            </h3>
-            <p className="text-[#C2C2C2] mb-6">
-              Get a free consultation and discover how Horizxon can transform
-              your online presence with cutting-edge web development solutions.
-            </p>
+        {/* CTA Section with LaserFlow Effect */}
+        <div className="text-center mt-16">
+          <div
+            className="relative overflow-visible"
+            style={{
+              height: "400px",
+              backgroundColor: "#000000",
+              borderRadius: "12px",
+            }}
+          >
+            {/* LaserFlow Background */}
+            <LaserFlow
+              horizontalBeamOffset={0.2}
+              verticalBeamOffset={0.1}
+              color="#9A7EFF"
+              verticalSizing={3.0}
+              horizontalSizing={0.7}
+              fogIntensity={0.6}
+              wispIntensity={6.0}
+            />
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg" onClick={onBookDemo}>
-                Get Quote
-              </Button>
+            {/* CTA Box Overlay */}
+            <div
+              className="absolute bg-black rounded-xl border-2 border-[#9A7EFF] flex items-center justify-center z-[6]"
+              style={{
+                bottom: "20px",
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "86%",
+                height: "60%",
+              }}
+            >
+              <div className="text-center w-full px-4 sm:px-6">
+                <h3 className="text-white font-semibold text-lg sm:text-xl mb-3 sm:mb-4">
+                  Ready to Build Your Dream Website?
+                </h3>
+                <p className="text-[#C2C2C2] text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed max-w-2xl mx-auto">
+                  Get a free consultation and discover how Horizxon can
+                  transform your online presence with cutting-edge web
+                  development solutions.
+                </p>
 
-              <a
-                href="#portfolio"
-                className="text-white hover:text-[#C2C2C2] transition-colors duration-200 font-medium flex items-center justify-center gap-2 group h-12"
-              >
-                <span>View Portfolio</span>
-                <svg
-                  className="w-4 h-4 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </a>
+                <div className="flex justify-center items-center">
+                  <StarBorder
+                    as="button"
+                    color="#9A7EFF"
+                    onClick={onBookDemo}
+                    className="hover:opacity-90 transition-opacity"
+                  >
+                    Get Quote
+                  </StarBorder>
+                </div>
+              </div>
             </div>
           </div>
         </div>

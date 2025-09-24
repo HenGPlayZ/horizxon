@@ -5,7 +5,8 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/HeroSection";
 import SolutionsSection from "@/components/SolutionsSection";
-import TechnologiesCarousel from "@/components/TechnologiesCarousel";
+import TechStack from "@/components/TechStack";
+import PixelBlast from "@/components/ui/PixelBlast";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -127,24 +128,55 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen relative">
+      {/* PixelBlast Background */}
+      <div
+        className="fixed inset-0 z-0"
+        style={{ backgroundColor: "transparent" }}
+      >
+        <PixelBlast
+          variant="circle"
+          pixelSize={6}
+          color="#B19EEF"
+          patternScale={2}
+          patternDensity={0.7}
+          pixelSizeJitter={0.3}
+          enableRipples={true}
+          rippleSpeed={0.5}
+          rippleThickness={0.08}
+          rippleIntensityScale={2.5}
+          liquid={true}
+          liquidStrength={0.15}
+          liquidRadius={1.5}
+          liquidWobbleSpeed={4}
+          speed={0.6}
+          edgeFade={0}
+          transparent={true}
+          antialias={false}
+        />
+      </div>
+
       {/* Header with navigation */}
-      <Header onBookDemo={handleBookDemo} />
+      <div className="relative z-20">
+        <Header onBookDemo={handleBookDemo} />
+      </div>
 
       {/* Main content */}
-      <main>
+      <main className="relative z-10">
         {/* Hero section */}
         <HeroSection onOpenModal={() => setIsModalOpen(true)} />
 
         {/* Solutions section */}
         <SolutionsSection onBookDemo={handleBookDemo} />
 
-        {/* Technologies Carousel */}
-        <TechnologiesCarousel />
+        {/* Tech Stack section */}
+        <TechStack />
       </main>
 
       {/* Footer */}
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
 
       {/* Unified Get Started Modal */}
       {isModalOpen && (

@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${openSans.variable} ${jetbrainsMono.variable} font-sans antialiased bg-black text-white`}
+        className={`${openSans.variable} ${jetbrainsMono.variable} font-sans antialiased text-white`}
       >
         {children}
       </body>
