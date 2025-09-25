@@ -84,23 +84,72 @@ const TechStack: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          {/* Pill component following design system */}
-          <div className="mb-8">
-            <StarBorder as="div" color="#63A7FF" className="inline-block">
+    <section
+      className="section-padding relative overflow-hidden"
+      style={{
+        background: `
+          var(--bg-primary),
+          linear-gradient(135deg, rgba(99, 167, 255, 0.03) 0%, rgba(169, 105, 255, 0.03) 100%)
+        `,
+        backgroundBlendMode: "overlay",
+      }}
+    >
+      {/* Enhanced background pattern - reduced on mobile */}
+      <div
+        className="absolute inset-0 opacity-10 md:opacity-20"
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at 20% 80%, var(--color-blue) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, var(--color-purple) 0%, transparent 50%),
+            radial-gradient(circle at 40% 40%, var(--color-cyan) 0%, transparent 50%)
+          `,
+          backgroundSize: "400px 400px, 300px 300px, 200px 200px",
+        }}
+      />
+
+      {/* Mobile-optimized background on small screens */}
+      <div
+        className="absolute inset-0 opacity-5 md:hidden"
+        style={{
+          backgroundImage: `radial-gradient(circle at 50% 50%, var(--color-purple) 0%, transparent 60%)`,
+          backgroundSize: "300px 300px",
+        }}
+      />
+
+      <div className="container-responsive relative z-10">
+        {/* Enhanced Section header */}
+        <div
+          className="text-center animate-fade-in"
+          style={{ marginBottom: "var(--space-12)" }}
+        >
+          {/* Enhanced pill component */}
+          <div
+            className="animate-slide-up mb-4 md:mb-8"
+            style={{
+              animationDelay: "100ms",
+            }}
+          >
+            <StarBorder
+              as="div"
+              color="var(--color-blue)"
+              className="inline-block"
+            >
               TECHNOLOGIES WE USE
             </StarBorder>
           </div>
 
-          {/* Heading with SplitText animation */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-white">
+          {/* Enhanced heading with design system */}
+          <h2
+            className="text-h2 font-bold text-center animate-slide-up mb-4 md:mb-6"
+            style={{
+              color: "var(--text-primary)",
+              animationDelay: "200ms",
+            }}
+          >
             <SplitText
               text="Built with modern"
               className="block"
-              delay={40}
+              delay={200}
               duration={0.8}
               ease="power3.out"
               splitType="words"
@@ -111,7 +160,7 @@ const TechStack: React.FC = () => {
             <SplitText
               text="technologies"
               className="block"
-              delay={60}
+              delay={300}
               duration={0.8}
               ease="power3.out"
               splitType="chars"
@@ -119,23 +168,30 @@ const TechStack: React.FC = () => {
               to={{ opacity: 1, y: 0, scale: 1 }}
               textAlign="center"
               style={{
-                background:
-                  "linear-gradient(95deg, #A969FF 10%, #E5559F 50%, #63A7FF 90%)",
+                background: "var(--gradient-text)",
                 WebkitBackgroundClip: "text",
                 backgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 color: "transparent",
+                WebkitFontSmoothing: "antialiased",
+                marginTop: "var(--space-2)",
               }}
             />
           </h2>
 
-          {/* Subtitle */}
-          <div className="text-[#C2C2C2] text-lg max-w-2xl mx-auto">
+          {/* Enhanced subtitle */}
+          <div
+            className="text-body text-center animate-slide-up max-w-sm md:max-w-2xl mx-auto px-4 md:px-0"
+            style={{
+              color: "var(--text-tertiary)",
+              animationDelay: "400ms",
+            }}
+          >
             <SplitText
               text="We leverage cutting-edge tools and frameworks to deliver exceptional web experiences that perform at scale."
               splitType="words"
-              delay={80}
-              duration={0.6}
+              delay={400}
+              duration={0.7}
               ease="power2.out"
               from={{ opacity: 0, y: 20 }}
               to={{ opacity: 1, y: 0 }}
@@ -143,22 +199,78 @@ const TechStack: React.FC = () => {
             />
           </div>
         </div>
+      </div>
 
-        {/* Logo Loop */}
-        <div className="relative">
+      {/* Full-bleed LogoLoop (edge-to-edge) */}
+      <div
+        className="relative animate-fade-in w-screen max-w-none left-1/2 -translate-x-1/2 mt-6 md:mt-10"
+        style={{ animationDelay: "600ms" }}
+      >
+        {/* Subtle gradient overlay for better logo visibility */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: `
+              linear-gradient(90deg, 
+                var(--bg-primary) 0%, 
+                transparent 10%, 
+                transparent 90%, 
+                var(--bg-primary) 100%
+              )
+            `,
+            zIndex: 1,
+          }}
+        />
+
+        {/* Enhanced logo container - no horizontal padding, full-bleed */}
+        <div className="relative py-6 md:py-12 rounded-none md:rounded-xl border-t border-b border-[var(--card-border)] bg-[rgba(255,255,255,0.02)]">
           <LogoLoop
             logos={technologies}
-            speed={60}
+            speed={50}
             direction="left"
-            logoHeight={48}
-            gap={48}
+            logoHeight={36}
+            gap={32}
             pauseOnHover
             scaleOnHover
             fadeOut
-            fadeOutColor="#000000"
+            fadeOutColor="var(--bg-primary)"
             ariaLabel="Technologies we use"
-            className="py-8"
+            className="transition-all duration-300 md:hidden"
           />
+          <LogoLoop
+            logos={technologies}
+            speed={50}
+            direction="left"
+            logoHeight={56}
+            gap={64}
+            pauseOnHover
+            scaleOnHover
+            fadeOut
+            fadeOutColor="var(--bg-primary)"
+            ariaLabel="Technologies we use"
+            className="transition-all duration-300 hidden md:block"
+          />
+        </div>
+
+        {/* Optional: Add category labels */}
+        <div
+          className="flex flex-wrap justify-center gap-2 md:gap-4 mt-6 md:mt-8 animate-slide-up px-4 md:px-0"
+          style={{ animationDelay: "800ms" }}
+        >
+          {["Frontend", "Backend", "Database", "Tools"].map(
+            (category, index) => (
+              <div
+                key={category}
+                className="glass px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-xs font-medium tracking-wide transition-all duration-300 hover:glass-strong flex-shrink-0"
+                style={{
+                  color: "var(--text-secondary)",
+                  animationDelay: `${900 + index * 100}ms`,
+                }}
+              >
+                {category}
+              </div>
+            )
+          )}
         </div>
       </div>
     </section>
