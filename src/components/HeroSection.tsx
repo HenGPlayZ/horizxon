@@ -172,8 +172,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onOpenModal }) => {
                       text="Build different."
                       className="block"
                       style={{ color: "var(--text-primary)" }}
-                      delay={400}
-                      duration={0.8}
+                      delay={200}
+                      duration={0.4}
                       ease="power3.out"
                       splitType="chars"
                       from={{ opacity: 0, y: 40 }}
