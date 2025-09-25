@@ -150,7 +150,7 @@ const TechStack: React.FC = () => {
               text="Built with modern"
               className="block"
               delay={200}
-              duration={0.8}
+              duration={0.4}
               ease="power3.out"
               splitType="words"
               from={{ opacity: 0, y: 30 }}
@@ -161,7 +161,7 @@ const TechStack: React.FC = () => {
               text="technologies"
               className="block"
               delay={300}
-              duration={0.8}
+              duration={0.4}
               ease="power3.out"
               splitType="chars"
               from={{ opacity: 0, y: 30, scale: 0.9 }}
@@ -190,8 +190,8 @@ const TechStack: React.FC = () => {
             <SplitText
               text="We leverage cutting-edge tools and frameworks to deliver exceptional web experiences that perform at scale."
               splitType="words"
-              delay={400}
-              duration={0.7}
+              delay={200}
+              duration={0.4}
               ease="power2.out"
               from={{ opacity: 0, y: 20 }}
               to={{ opacity: 1, y: 0 }}
