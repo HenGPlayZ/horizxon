@@ -9,9 +9,17 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onBookDemo }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navigationItems = [
+  const navigationItems: Array<{
+    label: string;
+    href: string;
+    external?: boolean;
+  }> = [
     { label: "Services", href: "#services" },
-    { label: "Portfolio", href: "#portfolio" },
+    {
+      label: "Portfolio",
+      href: "/HZN-WEBSITE-DEVELOPMENT.pdf",
+      external: true,
+    },
     { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },
   ];
@@ -33,9 +41,28 @@ const Header: React.FC<HeaderProps> = ({ onBookDemo }) => {
               <a
                 key={item.label}
                 href={item.href}
+                {...(item.external && {
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                })}
                 className="text-white/70 hover:text-white transition-all duration-300 font-medium text-sm tracking-wide relative group"
               >
                 {item.label}
+                {item.external && (
+                  <svg
+                    className="inline-block w-3 h-3 ml-1 opacity-40 group-hover:opacity-70 transition-opacity"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                )}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
@@ -85,10 +112,29 @@ const Header: React.FC<HeaderProps> = ({ onBookDemo }) => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="block text-white/70 hover:text-white transition-colors duration-300 font-medium text-sm tracking-wide py-2"
+                  {...(item.external && {
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  })}
+                  className="flex items-center gap-2 text-white/70 hover:text-white transition-colors duration-300 font-medium text-sm tracking-wide py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
+                  {item.external && (
+                    <svg
+                      className="w-3 h-3 opacity-40"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  )}
                 </a>
               ))}
               <div className="pt-4 border-t border-white/10">
