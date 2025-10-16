@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
   const footerLinks = [
     { label: "Services", href: "#" },
     { label: "About", href: "#" },
-    { label: "Contact", href: "#" },
+    { label: "Contact", href: "/contact" },
     { label: "Privacy", href: "#" },
   ];
 

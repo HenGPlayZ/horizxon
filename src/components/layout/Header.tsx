@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ onBookDemo }) => {
       external: true,
     },
     { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
